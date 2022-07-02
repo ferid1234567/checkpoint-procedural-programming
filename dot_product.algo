@@ -16,8 +16,8 @@ read(v);
 i:=0;
 j:=0;
 
-    for i from 0 to (v.lengh-4)/2 step 2 do
-    for j from i+2 to (v.lengh-2)/2 step 2 do
+    for i from 0 to v.lengh-2 step 2 do
+    for j from i+2 to v.lengh-2 step 2 do
     v1[0]:=v1[i];
     v1[1]:=v1[i+1];
     v2[0]:=v2[j];
@@ -52,7 +52,7 @@ read(v);
 i:=0;
 j:=0;
 
-    for i from 0 to v.lengh-4 step 2 do
+    for i from 0 to v.lengh-2 step 2 do
     for j from i+2 to v.lengh-2 step 2 do
     v1[0]:=v1[i];
     v1[1]:=v1[i+1];
