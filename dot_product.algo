@@ -1,0 +1,69 @@
+PROCEDURE dot_product(v1,v2: ARRAY_OF FLOAT[2],var ps:float)
+VAR
+BEGIN
+ps:=v1[0]*v2[0]+v1[1]*v2[1];
+read(ps);
+
+END
+
+ALGORITHM Test
+VAR
+v,v1,v2: ARRAY_OF float[];
+i,j:integer;
+BEGIN
+write("write the variables of all the vecteurs");
+read(v);
+i:=0;
+j:=0;
+
+    for i from 0 to (v.lengh-4)/2 step 2 do
+    for j from i+2 to (v.lengh-2)/2 step 2 do
+    v1[0]:=v1[i];
+    v1[1]:=v1[i+1];
+    v2[0]:=v2[j];
+    v2[1]:=v2[j+1];
+    dot_product(v1,v2,ps) 
+    if(ps=0) then
+    write("["v1(0)","v1[1]"]" "and" "["v2(0)","v2[1]"]" "are orthogonal");
+    else 
+    Write("V1 and V2 are not orthogonal");
+    end_if
+    enf_for
+    end_for
+
+END
+FUNCTION dot_product(v1,v2) : float
+VAR
+v1,v2: ARRAY_OF FLOAT[2];
+
+    ps:float;
+BEGIN
+ps:=v1[0]*v2[0]+v1[1]*v2[1];
+    
+    RETURN ps ;
+END
+ALGORITHM Test
+VAR
+v,v1,v2: ARRAY_OF float[];
+i,j:integer;
+BEGIN
+write("write the variable of all the vecteurs");
+read(v);
+i:=0;
+j:=0;
+
+    for i from 0 to v.lengh-4 step 2 do
+    for j from i+2 to v.lengh-2 step 2 do
+    v1[0]:=v1[i];
+    v1[1]:=v1[i+1];
+    v2[0]:=v2[j];
+    v2[1]:=v2[j+1];
+    if(dot_product(v1,v2)=0) then
+    write("["v1(0)","v1[1]"]" "and" "["v2(0)","v2[1]"]" "are orthogonal");
+    else 
+    Write("V1 and V2 are not orthogonal");
+    end_if
+    enf_for
+    end_for
+
+END
